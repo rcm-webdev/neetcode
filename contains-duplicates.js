@@ -1,41 +1,17 @@
-// Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+//217. Contains Duplicates
+//given an array of integers. determine if there are duplicates
 
-// Example 1:
-
-// Input: nums = [1,2,3,1]
-
-// Output: true
-
-// Explanation:
-
-// The element 1 occurs at the indices 0 and 3.
-
-// Example 2:
-
-// Input: nums = [1,2,3,4]
-
-// Output: false
-
-// Explanation:
-
-// All elements are distinct.
-
-// Example 3:
-
-// Input: nums = [1,1,1,3,3,4,3,2,4,2]
-
-// Output: true
-
-const duplicatesPresent = (nums) => {
-  return new Set(nums).size !== nums.length;
+const containsDuplicates = (arr) => {
+  return new Set(arr).size !== arr.length ? true : false;
 };
 
-let arr1 = [1, 2, 3, 4, 5, 5];
-let arr2 = [3, 5, 1, 3, 4, 2];
-let arr3 = [1, 2, 3, 4, 5, 6];
-
 //test cases
+let arr1 = [1, 2, 3, 3]; //true
+let arr2 = [1, 2, 3]; // false
+let arr3 = [4, 1, 1, 5, 7, 4, 3]; //true
+let arr4 = [4, 5, 1, 7, 9, 2, 3]; //false
 
-console.log(duplicatesPresent(arr1), true);
-console.log(duplicatesPresent(arr2), true);
-console.log(duplicatesPresent(arr3), false);
+console.log(duplicateDetector(arr1), true);
+console.log(duplicateDetector(arr2), false);
+console.log(duplicateDetector(arr3), true);
+console.log(duplicateDetector(arr4), false);
